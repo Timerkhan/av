@@ -1,6 +1,8 @@
 import org.junit.Test;
-import static junit.framework.Assert.*;
-import junit.framework.TestCase;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 
 public class ProductListTest {
     @Test
@@ -8,12 +10,10 @@ public class ProductListTest {
         String b = ProductList.getNumberStandart("Hello");
         assertNotNull("Check String for null", b);
     }
-    public void testGetNumberStandartToLowerCase() throws Exception {
-        String d = ProductList.getNumberStandart("HELLO");
-        assertTrue("hello", d == "hello");
-    }
-    public void testGetNumberStandartDeleteTrash() throws Exception {
-        String d = ProductList.getNumberStandart("he l l o");
-        assertTrue("hello", d == "hello");
+
+    @Test
+    public void testGetNumberStandart() {
+        String d = ProductList.getNumberStandart("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+        assertTrue(d == "абвгдеёжзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz0123456789");
     }
 }
