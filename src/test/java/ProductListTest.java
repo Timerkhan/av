@@ -13,7 +13,7 @@ public class ProductListTest {
         assertTrue("hello", d == "hello");
     }
     public void testGetNumberStandartDeleteTrash() throws Exception {
-        String d = ProductList.getNumberStandart("he1 l l 234o");
+        String d = ProductList.getNumberStandart("he l l o");
         assertTrue("hello", d == "hello");
     }
 }
