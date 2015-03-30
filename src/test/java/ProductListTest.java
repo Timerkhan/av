@@ -15,7 +15,7 @@ public class ProductListTest {
     public void testGetNumberStandart() {
         String d = ProductList.getNumberStandart("АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
         System.out.println(d);
-        assertTrue(d == "абвгдежзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz0123456789");
+        assertTrue(d.equals( "абвгдежзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz0123456789"));
 
     }
 }
