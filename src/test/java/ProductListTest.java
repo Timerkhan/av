@@ -19,4 +19,16 @@ public class ProductListTest {
 
         }
     }
+
+    @Test
+    public void speedGetNumberStandart(){
+        long lBegin = System.currentTimeMillis();
+        for (int i = 0; i < 100000; ++i)  {
+            String d = ProductList.getNumberStandart("АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+            assertTrue(d.equals("абвгдежзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz0123456789"));
+        }
+        long lEnd = System.currentTimeMillis();
+        long lDelta = lEnd - lBegin;
+        System.out.println(lDelta);
+    }
 }
