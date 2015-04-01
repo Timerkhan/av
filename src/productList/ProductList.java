@@ -13,15 +13,16 @@ public class ProductList {
         a.toLowerCase();
         char[] c_arr = a.toCharArray();
         for (int i = 0; i < c_arr.length; i++) {
-            System.out.println(c_arr[i]);
+            if (c_arr[i] == '\u0030' || c_arr[i] == '\u0031' || c_arr[i] == '\u0032' || c_arr[i] == '\u0033'
+                    || c_arr[i] == '\u0034' || c_arr[i] == '\u0035' || c_arr[i] == '\u0036' || c_arr[i] == '\u0037') {
+                String b = new StringBuilder("").append(c_arr[i]);
+            }
         }
-        String b = new String(c_arr);
-        return b;
     }
 
 
     public static void main(String[] args) {
-        String n = "heLlo";
+        String n = "heLloж";
         System.out.println(getNumberStandartChars(n));
     }
 }
