@@ -16,6 +16,14 @@ public class ProductListTest {
         for (int i = 0; i < 100000; ++i)  {
             String d = ProductList.getNumberStandart("АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
             assertTrue(d.equals("абвгдежзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz0123456789"));
+        }
+    }
+
+    @Test
+    public void testGetNumberStandartChars() {
+        for (int i = 0; i < 100000; ++i)  {
+            String d = ProductList.getNumberStandartChars("АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+            assertTrue(d.equals("абвгдежзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz0123456789"));
 
         }
     }
@@ -31,4 +39,17 @@ public class ProductListTest {
         long lDelta = lEnd - lBegin;
         System.out.println(lDelta);
     }
+
+    @Test
+    public void speedGetNumberStandartChars(){
+        long lBegin = System.currentTimeMillis();
+        for (int i = 0; i < 100000; ++i)  {
+            String d = ProductList.getNumberStandartChars("АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+            assertTrue(d.equals("абвгдежзийклмнопрстуфхцчшщъыьэюяabcdefghijklmnopqrstuvwxyz0123456789"));
+        }
+        long lEnd = System.currentTimeMillis();
+        long lDelta = lEnd - lBegin;
+        System.out.println(lDelta);
+    }
 }
+
