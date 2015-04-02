@@ -10,12 +10,12 @@ public class ProductList {
     }
 
     public static String getNumberStandartChars(String a) {
-        char[] c_arr = a.toCharArray();
+        char[] charList = a.toCharArray();
         StringBuilder k = new StringBuilder("");
-        for (int i = 0; i < c_arr.length; i++) {
-            if (c_arr[i] >= '\u0030' && c_arr[i] <= '\u0039' || c_arr[i] >= '\u0061' && c_arr[i] <= '\u007A'
-                    || c_arr[i] >= '\u0411' && c_arr[i] <= '\u044F' || c_arr[i] >= '\u0041' && c_arr[i] <= '\u005A') {
-                k.append(c_arr[i]);
+        for (int i = 0; i < charList.length; i++) {
+            if (charList[i] >= '\u0030' && charList[i] <= '\u0039' || charList[i] >= '\u0061' && charList[i] <= '\u007A'
+                    || charList[i] >= '\u0411' && charList[i] <= '\u044F' || charList[i] >= '\u0041' && charList[i] <= '\u005A') {
+                k.append(charList[i]);
             }
         }
         return k.toString().toLowerCase();
