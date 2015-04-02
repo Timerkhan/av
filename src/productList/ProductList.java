@@ -11,17 +11,14 @@ public class ProductList {
 
     public static String getNumberStandartChars(String a) {
         char[] c_arr = a.toCharArray();
+        StringBuilder k = new StringBuilder("");
         for (int i = 0; i < c_arr.length; i++) {
             if (c_arr[i] >= '\u0030' && c_arr[i] <= '\u0039' || c_arr[i] >= '\u0061' && c_arr[i] <= '\u007A'
                     || c_arr[i] >= '\u0411' && c_arr[i] <= '\u044F' || c_arr[i] >= '\u0041' && c_arr[i] <= '\u005A') {
-                c_arr[i] = c_arr[i];
-            }
-            else{
-                c_arr[i] = '\u0020';
+                k.append(c_arr[i]);
             }
         }
-        String b = new StringBuilder("").append(c_arr).toString().replaceAll(" ", "").toLowerCase();;
-        return b;
+        return k.toString().toLowerCase();
     }
 
 
