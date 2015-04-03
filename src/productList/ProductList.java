@@ -18,13 +18,15 @@ public class ProductList {
         try{
             char[] charList = a.toCharArray();
             StringBuilder stringBuilder = new StringBuilder();
+            char charItem = 0;
             for (int i = 0; i < charList.length; i++) {
-                if (charList[i] >= '\u0030' && charList[i] <= '\u0039' ||charList[i] >= '\u0061' && charList[i] <= '\u007A'
-                        || charList[i] >= '\u0430' && charList[i] <= '\u044F') {
-                    stringBuilder.append(charList[i]);
+                charItem  = charList[i];
+                if (charItem >= '\u0030' && charItem <= '\u0039' || charItem >= '\u0061' && charItem <= '\u007A'
+                        || charItem >= '\u0430' && charItem <= '\u044F') {
+                    stringBuilder.append(charItem);
                 }
-                if (charList[i] >= '\u0041' && charList[i] <= '\u005A' || charList[i] >= '\u0410' && charList[i] <= '\u042F') {
-                    stringBuilder.append(Character.toLowerCase(charList[i]));
+                if (charItem >= '\u0041' && charItem <= '\u005A' || charItem >= '\u0410' && charItem <= '\u042F') {
+                    stringBuilder.append(Character.toLowerCase(charItem));
                 }
             }
             return stringBuilder.toString();
