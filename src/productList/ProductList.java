@@ -1,14 +1,19 @@
+/**
+ * The {@code getNumberStandartChars} is a method, which takes some String "a" as a parameter.
+ * String "a" is the number of a spare part in real life. String "a" can contain any symbols
+ * for example: {@code "F23$%^вг о0#@7 ст"}.
+ * The method {@code getNumberStandartChars} takes a String "a" and gives the "code" of the spare part.
+ * That "code" should to copy String "a", but it may consist of letters of the Latin language
+ * and the Russian language in the low case, numbers and don't contain whitespaces;
+ * for example: {@code "f23вго07ст"}.
+ * The method {@code getNumberStandartChars} deletes all symbols that can't be in the "code".
+ * For example: {@code "F23$%^вг о0#@7 ст"} goes to {@code "f23вго07ст"}.
+ *
+ *  @author  Yarakhmedov Timerkhan
+ */
+
+
 public class ProductList {
-
-    public static String getNumberStandart(String a) {
-        try {
-            return a.toLowerCase().replaceAll("[^a-z0-9а-я]", "");
-        }
-        catch (NullPointerException e) {
-            return "Enter the Name";
-        }
-    }
-
     public static String getNumberStandartChars(String a) {
         try {
             char[] charList = a.toCharArray();
@@ -23,7 +28,8 @@ public class ProductList {
                 }
             }
             return stringBuilder.toString();
-        } catch (NullPointerException e) {
+        }
+        catch (NullPointerException e) {
             return "Enter the Name";
         }
     }
